@@ -2,4 +2,4 @@
 
 En la carpeta de básico son los apuntes iniciales de este leguaje.
 
-En la carpeta freeCodeCamp son soluciones de un curso que estoy haciendo pero puede ser de ayuda.
+En la carpeta freeCodeCamp son soluciones de un curso que estoy haciendo que pueden ser de ayuda.
