@@ -1,5 +1,8 @@
-# Código nivale básico de Javascript
+# Código nivel básico de Javascript
 
-En la carpeta de básico son los apuntes iniciales de este leguaje.
+### Básico
+En la carpeta de básico se encuentran apuntes iniciales de este leguaje (nivel básico/principiante).
 
-En la carpeta freeCodeCamp son soluciones de un curso que estoy haciendo que pueden ser de ayuda.
+
+### FreeCodeCamp
+En la carpeta freeCodeCamp son soluciones del curso de esta misma plataforma en formato .txt.
