@@ -1,0 +1,26 @@
+<html>
+<script>
+    console.log("Escribe el sueldo (sin decimales): ");
+    var sueldo = prompt();
+    console.log(sueldo);
+
+
+    console.log("Escribe los año: ");
+    var ant = prompt();
+    console.log(ant);
+
+    if (sueldo < 500 && ant >= 10) {
+
+        sueldo = sueldo * 3;
+        console.log(sueldo);
+
+    } else if (sueldo < 500 && ant < 10) {
+        sueldo = sueldo * 2;
+        console.log(sueldo);
+
+    } else if (sueldo >= 500) {
+        console.log(sueldo);
+    }
+</script>
+
+</html>

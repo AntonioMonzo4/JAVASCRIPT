@@ -1,0 +1,27 @@
+<html>
+    <script>
+        console.log("Escribe las horas trabajadas: ");
+        var horas = prompt();
+        console.log("Horas : "+horas);
+
+        console.log("Escribe el precio por hora: ");
+        var precio = prompt();
+        console.log("Precio : "+horas);
+
+        var sueldoSI=horas*precio;
+        var sueldoF;
+        if (sueldoSI<500){
+            sueldoF=sueldoSI;
+        } else {
+
+            sueldoSI=sueldoSI-500;
+            
+            if(sueldoSI<=400){
+                sueldoF=500+sueldoSI*0.25;
+            }else{
+                sueldoSI=sueldoSI-900;
+                sueldoF=500+400*0.25+sueldoSI*0.45;
+            }
+        }
+    </script>
+</html>
