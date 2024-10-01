@@ -1,27 +1,28 @@
 <html>
-    <script>
-        console.log("Escribe las horas trabajadas: ");
-        var horas = prompt();
-        console.log("Horas : "+horas);
+<script>
+    var horasTrabajadas = prompt("Introduce el número de horas trabajadas:");
+    var tarifaHora = prompt("Introduce el precio por hora:");
 
-        console.log("Escribe el precio por hora: ");
-        var precio = prompt();
-        console.log("Precio : "+horas);
+    var sueldoBruto;
 
-        var sueldoSI=horas*precio;
-        var sueldoF;
-        if (sueldoSI<500){
-            sueldoF=sueldoSI;
-        } else {
+    if (horasTrabajadas <= 35) {
+        sueldoBruto = horasTrabajadas * tarifaHora;
+    } else {
+        sueldoBruto = (35 * tarifaHora) + (horasTrabajadas - 35) * (tarifaHora * 1.5);
+    }
 
-            sueldoSI=sueldoSI-500;
-            
-            if(sueldoSI<=400){
-                sueldoF=500+sueldoSI*0.25;
-            }else{
-                sueldoSI=sueldoSI-900;
-                sueldoF=500+400*0.25+sueldoSI*0.45;
-            }
-        }
-    </script>
+    var salarioNeto;
+
+    if (sueldoBruto <= 500) {
+        salarioNeto = sueldoBruto;
+    } else if (sueldoBruto <= 900) {
+        salarioNeto = 500 + (sueldoBruto - 500) * (1 - 0.25);
+    } else {
+        salarioNeto = 500 + 400 * (1 - 0.25) + (sueldoBruto - 900) * (1 - 0.45);
+    }
+
+    console.log("El salario neto es: " + salarioNeto);
+
+</script>
+
 </html>
