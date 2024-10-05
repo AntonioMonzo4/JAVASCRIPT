@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Condicionales</title>
+</head>
+
+<body>
+
+    <script>
+        respuesta1 = prompt("¿Es una localidad con más de 30000 habitantes?(Responde con SI O NO )");
+        respuesta2 = prompt("¿Vive algún alumno de clase?(Responde con SI o NO)");
+        var pueblo1="Galapagar", pueblo2="Valdemorillo", pueblo3="El Escorial", pueblo4="Colmenarejo";
+
+        if (respuesta1 === "SI") {//descartamos pueblo3 y pueblo4
+
+            if (respuesta2 === "SI") {//descartamos pueblo2
+
+                console.log("Estas pensando en "+pueblo1);
+            } else {
+                console.log("Estas pensando en "+pueblo2);
+            }
+
+        } else {
+
+
+            if (respuesta2 === "SI") {//descartamos pueblo4
+
+                console.log("Estas pensando en "+pueblo3);
+            } else {
+                console.log("Estas pensando en "+pueblo4);
+            }
+
+
+        }
+
+    
+        //console.log(respuesta1); Para pruebas
+        //console.log(respuesta1 === "SI"); Para pruebas 
+    </script>
+</body>
+
+</html>
