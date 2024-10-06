@@ -9,15 +9,15 @@
 
 <body>
     <script>
-        var jugadores = { nombre: "Pepe", dorsal: 4 };
+        var jugadores = { nombre: "Pepe", dorsal: 4 };//Creación del Array
 
-        for (num = 4; num <= 40; num += 4) {
+        for (num = 4; num <= 40; num += 4) { //Bucle for para indicar el número
 
 
             jugadores.nombre = prompt("Indica el nombre del jugador y le asignarmos un dorsal.");
             jugadores.dorsal = num;
 
-            for (var x in jugadores) {
+            for (var x in jugadores) {//Bucle for in que muestra los jugadores
             console.log(jugadores.nombre + " " + jugadores.dorsal);
 
         }
@@ -25,31 +25,6 @@
 
         }
 
-        /**
-         * // Definir un array con los nombres de los jugadores
-var nombresJugadores = ["Juan", "Pepe", "Luis", "Carlos", "Ana", "María", "Pedro", "Laura", "Jorge", "Sofía", "David", "Marta"];
-
-// Crear un objeto vacío para los jugadores y sus dorsales
-var jugadores = {};
-
-// Inicializar el dorsal en 4
-var dorsal = 4;
-
-// Usar un bucle for para asignar los dorsales automáticamente
-for (var i in nombresJugadores) {
-    jugadores[nombresJugadores[i]] = dorsal;
-    dorsal += 4; // Aumentar el dorsal en 4 (para cumplir con el patrón)
-    
-    // Si el dorsal excede 40, detener el bucle
-    if (dorsal > 40) {
-        break;
-    }
-}
-
-// Imprimir el objeto con los jugadores y sus dorsales
-console.log(jugadores);
-
-        */
        
 
 
