@@ -1,11 +1,6 @@
-
-
-//var preguntas=["1-Geografía: ","2-Arte","3-Espectáculos","4-Historia","5-Ciencias","6-Deporte"];
 var eleccion;
 var respuestaJugador;
-var preguntaSeleccionada=[];
-var acierto=0,fallo=0;
-var p=0;
+var acierto = 0, fallo = 0;
 
 const preguntas = [
     { categoria: "Geografía", pregunta: "¿Cuál es la capital de Francia?", respuesta: "París" },
@@ -13,60 +8,55 @@ const preguntas = [
     { categoria: "Espectáculos", pregunta: "¿Quién protagonizó Titanic?", respuesta: "Leonardo DiCaprio" },
     { categoria: "Historia", pregunta: "¿En qué año llegó Colón a América?", respuesta: "1492" },
     { categoria: "Ciencias", pregunta: "¿Qué planeta es conocido como el planeta rojo?", respuesta: "Marte" },
-    { categoria: "Deportes", pregunta: "¿Cuántos jugadores hay en un equipo de fútbol?", respuesta: "11" }];
+    { categoria: "Deportes", pregunta: "¿Cuántos jugadores hay en un equipo de fútbol?", respuesta: "11" }
+];
 
-function mostrarPreguntas(){
+// Mostrar las preguntas 
+function mostrarPreguntas() {
+    console.log("Las preguntas son las siguientes: \n");
 
-    console.log("Las preguntas son las siguientes: \n \n")
-
-    for(var n=0;n<preguntas.length;n++){
-        
-
-        console.log((n+1)+"- "+preguntas[n].categoria+ ": " +preguntas[n].pregunta);
+    for (var n = 0; n < preguntas.length; n++) {
+        console.log((n + 1) + "- " + preguntas[n].categoria + ": " + preguntas[n].pregunta);
     }
 
     eleccionJugador();
-    
 
 }
 
-function eleccionJugador(){
-
+function eleccionJugador() {
     eleccion = parseInt(prompt("Elige la pregunta que quieras contestar indicando el número: \n (Puedes verlas por consola presionando F12)"));
-    respuestaJugador=(prompt(preguntas[eleccion-1].pregunta));
+
+    if (eleccion < 1 || eleccion > preguntas.length) {
+        console.log("Elige un número válido.");
+    }
+
+    respuestaJugador = prompt(preguntas[eleccion - 1].pregunta);
     acierto_fallo();
     borrarPregunta();
-    console.log(acierto);
-    for (var key in preguntaSeleccionada) {
-        console.log(preguntaSeleccionada);
-    }
     mostrarPreguntas();
-    
-
-}
-function borrarPregunta(){
-    preguntaSeleccionada[p]=eleccion;
-    p++;
-
 }
 
-function acierto_fallo(){
+function borrarPregunta() {
+    preguntas.splice(eleccion - 1, 1); // Eliminar la pregunta seleccionada del array
+}
 
-    if(respuestaJugador===preguntas[eleccion-1].respuesta){
-
+function acierto_fallo() {
+    if (respuestaJugador === preguntas[eleccion - 1].respuesta) {
         acierto++;
-        if(acierto==4){
+        console.log("¡Correcto! Aciertos: " + acierto);
 
+        if (acierto === 4) {
             console.log("Has acertado 4 preguntas. ¡Has ganado!");
-            close;
+            return; // Detener el juego
         }
 
-    }else{
+    } else {
         fallo++;
-        if(fallo==3){
+        console.log("Incorrecto. Fallos: " + fallo);
+
+        if (fallo === 3) {
             console.log("Has fallado 3 preguntas. Has perdido...");
-            close;
+            return; // Detener el juego
         }
     }
-    
 }
