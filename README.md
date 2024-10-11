@@ -9,3 +9,6 @@ En la carpeta freeCodeCamp son soluciones del curso de esta misma plataforma en 
 
 ### Clase 
 Código de actividades, ejercicios y otros de clase.
+
+### Dwec
+código de prácticas de clase de diseño web en entorno cliente.
