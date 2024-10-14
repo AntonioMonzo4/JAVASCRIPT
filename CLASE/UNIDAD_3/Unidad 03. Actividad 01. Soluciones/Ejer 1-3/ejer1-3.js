@@ -1,24 +1,24 @@
 
 // Calcular letraDNI
-function letraDNI(numeroDni){
+function letraDNI(numeroDni) {
     var letras = ['T', 'R', 'W', 'A', 'G', 'M', 'Y', 'F', 'P', 'D', 'X', 'B', 'N', 'J', 'Z', 'S', 'Q', 'V', 'H', 'L', 'C', 'K', 'E', 'T'];
-    return letras[numeroDni%23];
+    return letras[numeroDni % 23];
 }
 
 
-var l=prompt("Dime la letra","A");
+var letra = prompt("Dime la letra", "A");
 // Contaremos cuantos tienen  la letra buscada
-var numero=0;
+var numero = 0;
 
-var miArray=[];
+var miArray = [];
 
-for(i=1;i<=999;i++){
-    
+for (i = 1; i <= 999; i++) {
+
     // Si coinciden las letras, ya tenemos el numero
-    if(l==letraDNI(i)){
+    if (letra == letraDNI(i)) {
         numero++;
-	miArray.push(i);
+        miArray.push(i);
     }
 }
-alert("hay "+numero+" dnis hasta 999 con la letra "+l);
+alert("hay " + numero + " dnis hasta 999 con la letra " + l);
 alert(miArray);
