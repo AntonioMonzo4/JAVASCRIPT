@@ -1,74 +1,52 @@
-
-
+// Función para determinar si un número es primo
 function esPrimo(numero) {
+    var i; // Variable local para iterar
+    var primo = true; // Suponemos que el número es primo
 
-
-    // Ponemos el var para que sea local, ya que hay una variable fuera que se llama igual
-    var i;
-    var primo = true;
-    // Dividimos por 2, para ver si no es primo...
+    // Casos especiales para 2 o números menores que 2
     if (numero == 2) {
-        // Es primo, no hacemos nada y devolvemos true;
-        return true;
-    }
-    else if (numero < 2) {
-        return false;
-    }
-    else if (numero % 2 == 0) {
-
-        return false;
-    }
-    else {
+        return true; // El número 2 es primo
+    } else if (numero < 2) {
+        return false; // Números menores que 2 no son primos
+    } else if (numero % 2 == 0) {
+        return false; // Números pares mayores que 2 no son primos
+    } else {
+        // Bucle para verificar divisibilidad de 3 hasta la raíz cuadrada del número
         for (i = 3; i <= Math.sqrt(numero); i += 2) {
-            // Detectamos si el numero es divisible por alguno
-            // Si lo es, no es primo
             if (numero % i == 0) {
-                // Si ya sabemos que no es primo, paramos
-                primo = false;
-                break;
+                primo = false; // No es primo si es divisible por i
+                break; // Romper el bucle si ya sabemos que no es primo
             }
-
         }
     }
-
-    return primo;
+    return primo; // Retorna si el número es primo
 }
 
-
-
+// Función para comprobar si una cadena es un palíndromo
 function esPalindromo(cadena) {
-
-
-    // Para que no distinga mayusculas y minusculas, pasamos todo a mayusculas
-    cadena = cadena.toUpperCase();
-
-    // Obtenemos posicion final de vector de cadenas
-    // La inicial sabemos siempre que es 0
-    var fin = cadena.length - 1;
+    cadena = cadena.toUpperCase(); // Convertir a mayúsculas para evitar diferencias por caso
+    var fin = cadena.length - 1; // Posición final del array de caracteres
     var i, j;
 
+    // Bucle para comparar caracteres desde los extremos hacia el centro
     for (i = 0, j = fin; j >= i; i++, j--) {
-        // Comprobamos si no es palindromo. Si detectamos no lo es,
-        // devolvemos false
         if (cadena[i] != cadena[j]) {
-            return false;
+            return false; // No es palíndromo si los caracteres no coinciden
         }
     }
-
-    // Si no hemos detectado que no es palindromo, es que lo es
-    return true;
-
+    return true; // Es palíndromo si todas las comparaciones coinciden
 }
 
-var miArray = new Array();
-
+var miArray = new Array(); // Array para almacenar números que son palíndromos y primos
 var numero = 0;
+
+// Bucle para verificar todos los números del 2 al 100,000
 for (x = 2; x <= 100000; x++) {
-    // REcordamos el palindromo trabaja con cadenas
+    // Verificar si el número es tanto un palíndromo como un primo
     if (esPalindromo(x.toString()) && esPrimo(x)) {
-        numero++;
-        miArray.push(x);
+        numero++; // Incrementar el contador de números que cumplen ambas condiciones
+        miArray.push(x); // Añadir el número al array
     }
 }
-alert("El numero es : " + numero);
-alert(miArray.join(" ; "));
+alert("El numero es : " + numero); // Mostrar la cantidad de números que cumplen las condiciones
+alert(miArray.join(" ; ")); // Mostrar los números encontrados
