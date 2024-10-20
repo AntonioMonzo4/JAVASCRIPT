@@ -1,3 +1,0 @@
-var myFirstName = "Antonio" ;
-
-var myLastName = "Monzó" ;

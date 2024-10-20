@@ -1,2 +1,0 @@
-// Cambia solo el código debajo de esta línea
-const myArray = [["a",42],["b",17]];
