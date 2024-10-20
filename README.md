@@ -1,14 +1,10 @@
 # Código nivel básico de Javascript
 
-### Básico
+### BÁSICO
 En la carpeta de básico se encuentran apuntes iniciales de este leguaje (nivel básico/principiante).
 
-
-### FreeCodeCamp
-En la carpeta freeCodeCamp son soluciones del curso de esta misma plataforma en formato .txt.
-
-### Clase 
+### CLASE
 Código de actividades, ejercicios y otros de clase.
 
-### Dwec
+### DWEC
 código de prácticas de clase de diseño web en entorno cliente.
