@@ -1,113 +1,35 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cronómetro y Reloj</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            margin-top: 50px;
-        }
-        #reloj, #cronometro {
-            font-size: 2em;
-            margin-bottom: 20px;
-        }
-        button {
-            font-size: 1em;
-            padding: 10px 20px;
-            margin: 5px;
-        }
-    </style>
+    <script src="cronometro.js"></script>
+    <link rel="stylesheet" href="style.css">
+
 </head>
+
 <body>
     <h1>Cronómetro y Reloj</h1>
 
-    <!-- Mostrar la hora actual -->
-    <div id="reloj">00:00:00</div>
 
-    <!-- Mostrar el cronómetro -->
+    <div id="reloj">00:00:00</div>
     <div id="cronometro">00:00:00</div>
 
-    <!-- Botones para controlar el cronómetro -->
-    <button onclick="iniciarCronometro()">Iniciar</button>
-    <button onclick="pararCronometro()">Parar</button>
-    <button onclick="reiniciarCronometro()">Reiniciar</button>
 
-    <script>
-// Función para actualizar el reloj cada segundo
-function actualizarReloj() {
-    // Obtener la hora actual
-    const ahora = new Date();
+    <button onclick="iniciarC()">Iniciar</button>
+    <button onclick="pararC()">Parar</button>
+    <button onclick="reiniciarC()">Reiniciar</button>
 
-    // Obtener las horas, minutos y segundos actuales, y formatearlos para que siempre tengan 2 dígitos
-    const horas = String(ahora.getHours()).padStart(2, '0');     // Hora actual (00-23)
-    const minutos = String(ahora.getMinutes()).padStart(2, '0'); // Minutos actuales (00-59)
-    const segundos = String(ahora.getSeconds()).padStart(2, '0'); // Segundos actuales (00-59)
 
-    // Actualizar el contenido del elemento con id "reloj" con la hora formateada
-    document.getElementById('reloj').textContent = `${horas}:${minutos}:${segundos}`;
-}
-
-// Variables para el cronómetro
-let tiempoCronometro = 0; // Tiempo del cronómetro en segundos
-let intervaloCronometro;  // Variable para almacenar el intervalo que controla el cronómetro
-let enMarcha = false;     // Bandera para indicar si el cronómetro está en marcha
-
-// Función para actualizar el cronómetro en la pantalla
-function actualizarCronometro() {
-    // Calcular horas, minutos y segundos a partir del tiempo total en segundos
-    const horas = String(Math.floor(tiempoCronometro / 3600)).padStart(2, '0'); // Calcular las horas
-    const minutos = String(Math.floor((tiempoCronometro % 3600) / 60)).padStart(2, '0'); // Calcular los minutos
-    const segundos = String(tiempoCronometro % 60).padStart(2, '0'); // Calcular los segundos
-
-    // Actualizar el contenido del elemento con id "cronometro" con el tiempo formateado
-    document.getElementById('cronometro').textContent = `${horas}:${minutos}:${segundos}`;
-}
-
-// Función para iniciar el cronómetro
-function iniciarCronometro() {
-    // Verificar si el cronómetro no está ya en marcha
-    if (!enMarcha) {
-        // Configurar un intervalo que incremente el tiempo cada segundo
-        intervaloCronometro = setInterval(() => {
-            tiempoCronometro++; // Incrementar el tiempo en 1 segundo
-            actualizarCronometro(); // Actualizar la visualización del cronómetro
-        }, 1000); // Intervalo de 1000 milisegundos (1 segundo)
-
-        // Cambiar el estado del cronómetro a en marcha
-        enMarcha = true;
-    }
-}
-
-// Función para parar el cronómetro
-function pararCronometro() {
-    // Detener el intervalo que controla el cronómetro
-    clearInterval(intervaloCronometro);
-
-    // Cambiar el estado del cronómetro a detenido
-    enMarcha = false;
-}
-
-// Función para reiniciar el cronómetro
-function reiniciarCronometro() {
-    // Llamar a la función para parar el cronómetro
-    pararCronometro();
-
-    // Reiniciar el tiempo del cronómetro a 0
-    tiempoCronometro = 0;
-
-    // Actualizar la visualización del cronómetro para reflejar el cambio
-    actualizarCronometro();
-}
-
-// Actualizar el reloj cada segundo utilizando setInterval
-setInterval(actualizarReloj, 1000); // Llama a la función actualizarReloj cada 1000 milisegundos (1 segundo)
-
-// Inicializar el cronómetro en 00:00:00 al cargar la página
-actualizarCronometro();
-
-    </script>
 </body>
+
+<script>
+
+    setInterval(actualizarR, 1000);
+    actualizarC();
+
+</script>
+
 </html>

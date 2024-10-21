@@ -1,0 +1,35 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin-top: 50px;
+    background-color: #e0f7fa; 
+    color: #01579b; 
+}
+
+#reloj,
+#cronometro {
+    font-size: 2em;
+    margin-bottom: 20px;
+    color: #0277bd; /* Azul intermedio */
+}
+
+button {
+    font-size: 1em;
+    padding: 10px 20px;
+    margin: 5px;
+    background-color: #0288d1; /* Azul vivo */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0277bd; /* Azul más oscuro al pasar el mouse */
+}
+
+#resultado {
+    font-size: 1.2em;
+    color: #01579b; /* Azul oscuro para los resultados */
+    margin-top: 20px;
+}

@@ -1,43 +1,37 @@
+
+
 function convertirBases() {
     // Solicitar la base en la que está el número
-    const baseOrigen = prompt("Introduce la base del número (binario, decimal, octal, hexadecimal):").trim().toLowerCase();
-    
-    // Solicitar el número en la base indicada
-    const numero = prompt(`Introduce el número en base ${baseOrigen}:`).trim();
-    
-    let decimal;
-    // Convertir el número a decimal según la base indicada
-    try {
-        if (baseOrigen === "binario") {
-            decimal = parseInt(numero, 2);
-        } else if (baseOrigen === "decimal") {
-            decimal = parseInt(numero, 10);
-        } else if (baseOrigen === "octal") {
-            decimal = parseInt(numero, 8);
-        } else if (baseOrigen === "hexadecimal") {
-            decimal = parseInt(numero, 16);
-        } else {
-            alert("Base no válida. Debe ser binario, decimal, octal o hexadecimal.");
-            return;
-        }
+    var baseOrigen = prompt("Introduce la base del número (binario-2, decimal-10, octal-8, hexadecimal-16):").toLowerCase();
 
-        if (isNaN(decimal)) {
-            throw new Error("Número no válido para la base indicada.");
-        }
-    } catch (error) {
-        alert(error.message);
+    // Solicitar el número en la base indicada
+    var num = prompt("Introduce el número en base " + baseOrigen);
+
+    var numF;
+    // Convertir el número a decimal según la base indicada
+
+    if (baseOrigen === "2") {
+
+        numF = parseInt(num, 2);
+
+    } else if (baseOrigen === "10") {
+
+        numF = parseInt(num, 10);
+
+    } else if (baseOrigen === "8") {
+
+        numF = parseInt(num, 8);
+
+    } else if (baseOrigen === "16") {
+
+        numF = parseInt(num, 16);
+
+    } else {
+        alert("Base no válida. Debe ser binario, decimal, octal o hexadecimal.");
         return;
     }
 
-    // Mostrar el número en las diferentes bases
-    alert(
-        `Número en las diferentes bases:\n` +
-        `Binario: ${decimal.toString(2)}\n` +
-        `Decimal: ${decimal}\n` +
-        `Octal: ${decimal.toString(8)}\n` +
-        `Hexadecimal: ${decimal.toString(16).toUpperCase()}`
-    );
-}
 
-// Llamar a la función para ejecutar el programa
-convertirBases();
+
+    alert("Número en las diferentes bases:\n" + " Binario: "+ numF.toString(2)+ "\n Decimal: " +numF+ "\n Octal: "+ numF.toString(8)+"\n Hexadecimal: "+numF.toString(16));
+}
