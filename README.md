@@ -1,10 +1,5 @@
-# Código nivel básico de Javascript
+### El repositorio "JAVASCRIPT" de AntonioMonzo4 está estructurado en tres carpetas principales:
 
-### BÁSICO
-En la carpeta de básico se encuentran apuntes iniciales de este leguaje (nivel básico/principiante).
-
-### CLASE
-Código de actividades, ejercicios y otros de clase.
-
-### DWEC
-código de prácticas de clase de diseño web en entorno cliente.
+## basico: Incluye ejemplos de programación básica en JavaScript.
+## clase: Contiene material de clase, ejercicios y temas específicos relacionados con el desarrollo web en entorno cliente.
+## DWEC: Incluye prácticas y proyectos para la asignatura Desarrollo Web en Entorno Cliente, con archivos HTML, CSS y JavaScript para diferentes ejercicios.
